@@ -12,49 +12,49 @@ import java.util.concurrent.TimeUnit;
 
 public class GmailTest{
 
-    // Declare driver and base url
-    public static WebDriver driver;
-    public static String baseUrl;
-
-    // Initialize pages
-
-    GooglePage googlePage = new GooglePage(driver);
-    StackPage stackPage = new StackPage(driver);
-
-    // Initialize driver
-
-    @BeforeClass
-    public static void setUp() {
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        ChromeOptions options = new ChromeOptions();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        options.setAcceptInsecureCerts(true);
-        options.addArguments("--disable-web-security",
-                "--user-data-dir",
-                "--allow-running-insecure-content");
-        baseUrl = "https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent%27";
-    }
-
-
-    // Running tests
-
-    @Test
-    public void checkGoogleMail() throws Exception {
-        stackPage.loginWithGoogle();
-        googlePage.proceedWithGoogle();
-        googlePage.deleteFirstLetterFromIncoming();
-        googlePage.deleteSpamLettersIfExist();
-        googlePage.logOutFromGoogle();
-    }
-
-    // Close driver
-
-    @AfterClass
-    public static void shutDown() throws Exception {
-        driver.quit();
-    }
+//    // Declare driver and base url
+//    public static WebDriver driver;
+//    public static String baseUrl;
+//
+//    // Initialize pages
+//
+//    GooglePage googlePage = new GooglePage(driver);
+//    StackPage stackPage = new StackPage(driver);
+//
+//    // Initialize driver
+//
+//    @BeforeClass
+//    public static void setUp() {
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
+//        ChromeOptions options = new ChromeOptions();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        options.setAcceptInsecureCerts(true);
+//        options.addArguments("--disable-web-security",
+//                "--user-data-dir",
+//                "--allow-running-insecure-content");
+//        baseUrl = "https://stackoverflow.com/users/signup?ssrc=head&returnurl=%2fusers%2fstory%2fcurrent%27";
+//    }
+//
+//
+//    // Running tests
+//
+//    @Test
+//    public void checkGoogleMail() throws Exception {
+//        stackPage.loginWithGoogle();
+//        googlePage.proceedWithGoogle();
+//        googlePage.deleteFirstLetterFromIncoming();
+//        googlePage.deleteSpamLettersIfExist();
+//        googlePage.logOutFromGoogle();
+//    }
+//
+//    // Close driver
+//
+//    @AfterClass
+//    public static void shutDown() throws Exception {
+//        driver.quit();
+//    }
 
 
     /** Test without page object
